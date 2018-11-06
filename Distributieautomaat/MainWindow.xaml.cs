@@ -20,7 +20,7 @@ namespace Distributieautomaat
     /// </summary>
     public partial class MainWindow : Window
     {
-        enum Producten { Chocolade, wafel, chips, pannenkoek };
+        enum Producten { Chocolade=150, wafel=200, chips=250, pannenkoek=350 };
         double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2 };
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
         public MainWindow()
@@ -50,6 +50,8 @@ namespace Distributieautomaat
             btnSamenvatting.Visibility = Visibility.Hidden;
             lblInformatie4.Visibility = Visibility.Hidden;
             lblSamenvatting.Visibility = Visibility.Hidden;
+
+            
             
             
         }
