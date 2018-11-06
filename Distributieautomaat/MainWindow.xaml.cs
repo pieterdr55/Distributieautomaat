@@ -45,6 +45,7 @@ namespace Distributieautomaat
                 lstKeuze.Items.Add((Producten)i);
                 lstInworp.Items.Add(bedrag[i]);
             }
+
             lblInworp.Visibility = Visibility.Hidden;
             lstInworp.Visibility = Visibility.Hidden;
             btnSamenvatting.Visibility = Visibility.Hidden;
