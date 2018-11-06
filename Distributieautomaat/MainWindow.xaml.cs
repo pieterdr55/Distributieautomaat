@@ -20,9 +20,29 @@ namespace Distributieautomaat
     /// </summary>
     public partial class MainWindow : Window
     {
+        enum Producten { Chocolade, wafel, chips, pannenkoek };
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Opstart();
+        }
+        
+        public void Opstart()
+        {
+            for (int i=0;i<4;i++)
+            {
+                lstKeuze.Items.Add((Producten)i);
+            }
+            
         }
     }
 }

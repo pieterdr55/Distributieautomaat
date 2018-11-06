@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Distributieautomaat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid Loaded="Grid_Loaded">
         <Label x:Name="lblInformatie" Content="Kies een artikel" HorizontalAlignment="Left" Margin="67,68,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstKeuze" HorizontalAlignment="Left" Height="100" Margin="67,111,0,0" VerticalAlignment="Top" Width="123"/>
         <Label x:Name="lblKeuze" Content="Label" HorizontalAlignment="Left" Margin="282,123,0,0" VerticalAlignment="Top"/>
