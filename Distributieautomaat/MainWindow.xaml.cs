@@ -21,6 +21,7 @@ namespace Distributieautomaat
     public partial class MainWindow : Window
     {
         enum Producten { Chocolade, wafel, chips, pannenkoek };
+        double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2 };
         public MainWindow()
         {
             InitializeComponent();
@@ -41,7 +42,10 @@ namespace Distributieautomaat
             for (int i=0;i<4;i++)
             {
                 lstKeuze.Items.Add((Producten)i);
+                lstInworp.Items.Add(bedrag[i]);
             }
+
+            
             
         }
     }
