@@ -10,14 +10,14 @@
         <Label x:Name="lblInformatie" Content="Kies een artikel" HorizontalAlignment="Left" Margin="67,68,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstKeuze" HorizontalAlignment="Left" Height="100" Margin="67,111,0,0" VerticalAlignment="Top" Width="123"/>
         <Label x:Name="lblKeuze" Content="Label" HorizontalAlignment="Left" Margin="282,123,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblinformatie2" Content="Label" HorizontalAlignment="Left" Margin="282,93,0,0" VerticalAlignment="Top" Width="64"/>
+        <Label x:Name="lblinformatie2" Content="Jouw keuze:" HorizontalAlignment="Left" Margin="282,93,0,0" VerticalAlignment="Top" Width="98"/>
         <Label x:Name="lblWisselgeld" Content="Label" HorizontalAlignment="Left" Margin="282,169,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblinformatie3" Content="Label" HorizontalAlignment="Left" Margin="282,211,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblInworp" Content="Label" HorizontalAlignment="Left" Margin="465,68,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="100" Margin="456,111,0,0" VerticalAlignment="Top" Width="100"/>
         <Button x:Name="btnNieuweklant" Content="Nieuwe klant" HorizontalAlignment="Left" Margin="465,237,0,0" VerticalAlignment="Top" Width="91" Height="60"/>
         <Button x:Name="btnSamenvatting" Content="Samenvatting" HorizontalAlignment="Left" Margin="465,315,0,0" VerticalAlignment="Top" Width="91" Height="81"/>
-        <Label x:Name="lblInformatie4" Content="Label" HorizontalAlignment="Left" Margin="601,76,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="601,76,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSamenvatting" Content="Label" HorizontalAlignment="Left" Margin="601,123,0,0" VerticalAlignment="Top"/>
 
     </Grid>
