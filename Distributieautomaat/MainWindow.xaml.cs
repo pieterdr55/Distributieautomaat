@@ -40,10 +40,17 @@ namespace Distributieautomaat
         
         public void Opstart()
         {
-            for (int i=0;i<4;i++)
+            for (int i=0;i<351;i++)
             {
-                lstKeuze.Items.Add((Producten)i);
-                lstInworp.Items.Add(bedrag[i]);
+                if  (Enum.IsDefined(typeof(Producten), i))
+                {
+                    lstKeuze.Items.Add((Producten)i);
+                }
+            }
+
+            for (int j = 0;j<5;j++)
+            {
+                lstInworp.Items.Add(bedrag[j]);
             }
 
             lblInworp.Visibility = Visibility.Hidden;
@@ -51,10 +58,19 @@ namespace Distributieautomaat
             btnSamenvatting.Visibility = Visibility.Hidden;
             lblInformatie4.Visibility = Visibility.Hidden;
             lblSamenvatting.Visibility = Visibility.Hidden;
+        }
 
+        private void lstKeuze_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             
-            
-            
+        }
+
+        public void KeuzeArtikel()
+        {
+            string artikel = Convert.ToString(lstKeuze.SelectedValue);
+            double index = (double)Enum.Parse(typeof(Producten), artikel);
+            double prijs = index / 100;
+            lblKeuze.Content = artikel + " " + prijs;
         }
     }
 }
