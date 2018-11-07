@@ -62,14 +62,15 @@ namespace Distributieautomaat
 
         private void lstKeuze_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            KeuzeArtikel();
         }
 
         public void KeuzeArtikel()
         {
             string artikel = Convert.ToString(lstKeuze.SelectedValue);
-            double index = (double)Enum.Parse(typeof(Producten), artikel);
-            double prijs = index / 100;
+            int index = (int)Enum.Parse(typeof(Producten), artikel);
+            double indexdl = Convert.ToDouble(index);
+            double prijs = indexdl / 100;
             lblKeuze.Content = artikel + " " + prijs;
         }
     }
