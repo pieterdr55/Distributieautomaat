@@ -60,6 +60,7 @@ namespace Distributieautomaat
             lblSamenvatting.Visibility = Visibility.Hidden;
         }
 
+
         private void lstKeuze_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             KeuzeArtikel();
