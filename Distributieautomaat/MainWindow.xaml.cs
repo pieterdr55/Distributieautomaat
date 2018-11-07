@@ -21,8 +21,9 @@ namespace Distributieautomaat
     public partial class MainWindow : Window
     {
         enum Producten { Chocolade=150, wafel=200, chips=250, pannenkoek=350 };
-        double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2 };
+        double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2};
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
+        char eurosymbool = '€';
         public MainWindow()
         {
             InitializeComponent();
@@ -72,7 +73,17 @@ namespace Distributieautomaat
             int index = (int)Enum.Parse(typeof(Producten), artikel);
             double indexdl = Convert.ToDouble(index);
             double prijs = indexdl / 100;
-            lblKeuze.Content = artikel + " " + prijs;
+            lblKeuze.Content = artikel + " "+ eurosymbool + prijs;
+
+
+            lblInworp.Visibility = Visibility.Visible;
+            lstInworp.Visibility = Visibility.Visible;
+            btnSamenvatting.Visibility = Visibility.Visible;
+            lblInformatie4.Visibility = Visibility.Visible;
+            lblSamenvatting.Visibility = Visibility.Visible;
+
+            lblWisselgeld.Content = "je wisselgeld bedraagt ";
+            lblinformatie3.Content = "Geniet van je " + artikel;
         }
     }
 }
