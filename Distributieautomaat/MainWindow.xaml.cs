@@ -108,7 +108,6 @@ namespace Distributieautomaat
                 }
                 lblinformatie3.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
-
             }
             
             ingeworpen = ingeworpen + gekozenbedrag;

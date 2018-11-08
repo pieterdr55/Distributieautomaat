@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Loaded="Grid_Loaded">
-        <Label x:Name="lblInformatie" Content="Kies een artikel" HorizontalAlignment="Left" Margin="67,68,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstKeuze" HorizontalAlignment="Left" Height="100" Margin="67,111,0,0" VerticalAlignment="Top" Width="123" SelectionChanged="lstKeuze_SelectionChanged"/>
-        <Label x:Name="lblKeuze" Content="Label" HorizontalAlignment="Left" Margin="236,125,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblinformatie2" Content="Jouw keuze:" HorizontalAlignment="Left" Margin="236,78,0,0" VerticalAlignment="Top" Width="98"/>
-        <Label x:Name="lblWisselgeld" Content="Label" HorizontalAlignment="Left" Margin="236,163,0,0" VerticalAlignment="Top" Width="169"/>
-        <Label x:Name="lblinformatie3" Content="Label" HorizontalAlignment="Left" Margin="236,205,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblInformatie" Content="Kies een artikel" HorizontalAlignment="Left" Margin="72,89,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lstKeuze" HorizontalAlignment="Left" Height="100" Margin="72,132,0,0" VerticalAlignment="Top" Width="123" SelectionChanged="lstKeuze_SelectionChanged"/>
+        <Label x:Name="lblKeuze" Content="Label" HorizontalAlignment="Left" Margin="241,146,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblinformatie2" Content="Jouw keuze:" HorizontalAlignment="Left" Margin="241,99,0,0" VerticalAlignment="Top" Width="98"/>
+        <Label x:Name="lblWisselgeld" Content="Label" HorizontalAlignment="Left" Margin="241,184,0,0" VerticalAlignment="Top" Width="169"/>
+        <Label x:Name="lblinformatie3" Content="Label" HorizontalAlignment="Left" Margin="241,226,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblInworp" Content="Label" HorizontalAlignment="Left" Margin="465,68,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="141" Margin="456,111,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="lstInworp_SelectionChanged"/>
         <Button x:Name="btnNieuweklant" Content="Nieuwe klant" HorizontalAlignment="Left" Margin="456,266,0,0" VerticalAlignment="Top" Width="131" Height="60"/>
