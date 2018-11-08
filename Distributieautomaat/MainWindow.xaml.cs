@@ -24,6 +24,7 @@ namespace Distributieautomaat
         double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2};
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
         char eurosymbool = '€';
+        double ingeworpen = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -84,6 +85,31 @@ namespace Distributieautomaat
 
             lblWisselgeld.Content = "je wisselgeld bedraagt ";
             lblinformatie3.Content = "Geniet van je " + artikel;
+        }
+
+        private void lstInworp_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            KiesBedrag();
+            lstInworp.SelectedIndex = -1;
+        }
+
+        public void KiesBedrag()
+        {
+            double gekozenbedrag = Convert.ToDouble(lstInworp.SelectedValue);
+            int teller = 0;
+            foreach (double keuze in bedrag)
+            {
+                if (gekozenbedrag == keuze)
+                {
+                    hoeveel[teller] = hoeveel[teller] + 1;
+
+                }
+                teller = teller + 1;
+            }
+            lblinformatie3.Content = hoeveel[0] + " " + hoeveel[1] + " " + hoeveel[2] + " " + hoeveel[3] + " "+hoeveel[4];
+            ingeworpen = ingeworpen + gekozenbedrag;
+            lblWisselgeld.Content = "jouw inworp" + Environment.NewLine +
+                eurosymbool + " " + ingeworpen;
         }
     }
 }

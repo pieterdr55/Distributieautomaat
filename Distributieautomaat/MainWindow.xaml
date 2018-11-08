@@ -14,7 +14,7 @@
         <Label x:Name="lblWisselgeld" Content="Label" HorizontalAlignment="Left" Margin="282,169,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblinformatie3" Content="Label" HorizontalAlignment="Left" Margin="282,211,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblInworp" Content="Label" HorizontalAlignment="Left" Margin="465,68,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="141" Margin="456,111,0,0" VerticalAlignment="Top" Width="131"/>
+        <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="141" Margin="456,111,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="lstInworp_SelectionChanged"/>
         <Button x:Name="btnNieuweklant" Content="Nieuwe klant" HorizontalAlignment="Left" Margin="456,266,0,0" VerticalAlignment="Top" Width="131" Height="60"/>
         <Button x:Name="btnSamenvatting" Content="Samenvatting" HorizontalAlignment="Left" Margin="456,341,0,0" VerticalAlignment="Top" Width="131" Height="55"/>
         <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="601,76,0,0" VerticalAlignment="Top"/>
