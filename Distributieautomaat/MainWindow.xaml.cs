@@ -124,7 +124,6 @@ namespace Distributieautomaat
             lblWisselgeld.Content = "jouw inworp" + Environment.NewLine +
                 eurosymbool + " " + ingeworpen;
 
-            
             if (ingeworpen == prijs)
             {
                 lblinformatie3.Content = "Geniet van je " + artikel;
