@@ -27,6 +27,7 @@ namespace Distributieautomaat
         double ingeworpen = 0;
         double prijs = 0;
         double wisselgeld = 0;
+        string artikel = "";
         public MainWindow()
         {
             InitializeComponent();
@@ -62,6 +63,9 @@ namespace Distributieautomaat
             btnSamenvatting.Visibility = Visibility.Hidden;
             lblInformatie4.Visibility = Visibility.Hidden;
             lblSamenvatting.Visibility = Visibility.Hidden;
+            lblinformatie3.Visibility = Visibility.Hidden;
+            lblKeuze.Visibility = Visibility.Hidden;
+            lblWisselgeld.Visibility = Visibility.Hidden;
         }
 
 
@@ -72,7 +76,7 @@ namespace Distributieautomaat
 
         public void KeuzeArtikel()
         {
-            string artikel = Convert.ToString(lstKeuze.SelectedValue);
+            artikel = Convert.ToString(lstKeuze.SelectedValue);
             int index = (int)Enum.Parse(typeof(Producten), artikel);
             double indexdl = Convert.ToDouble(index);
             prijs = indexdl / 100;
@@ -84,9 +88,8 @@ namespace Distributieautomaat
             btnSamenvatting.Visibility = Visibility.Visible;
             lblInformatie4.Visibility = Visibility.Visible;
             lblSamenvatting.Visibility = Visibility.Visible;
+            lblKeuze.Visibility = Visibility.Visible;
 
-            lblWisselgeld.Content = "je wisselgeld bedraagt ";
-            lblinformatie3.Content = "Geniet van je " + artikel;
         }
 
         private void lstInworp_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -100,6 +103,10 @@ namespace Distributieautomaat
             double gekozenbedrag = Convert.ToDouble(lstInworp.SelectedValue);
             int teller = 0;
             lblinformatie3.Content = "";
+
+            lblWisselgeld.Visibility = Visibility.Visible;
+            lblinformatie3.Visibility = Visibility.Visible;
+
             foreach (double keuze in bedrag)
             {
                 if (gekozenbedrag == keuze)
@@ -118,6 +125,8 @@ namespace Distributieautomaat
             {
                 wisselgeld = ingeworpen - prijs;
                 lblWisselgeld.Content = "jouw wisselgeld bedraagt " + eurosymbool + wisselgeld;
+                lblinformatie3.Content = "Geniet van je " + artikel;
+                
             }
         }
     }
