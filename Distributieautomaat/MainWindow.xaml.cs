@@ -149,8 +149,6 @@ namespace Distributieautomaat
                 lstInworp.IsEnabled = false;
                 btnSamenvatting.Visibility = Visibility.Visible;
                 lblOverzicht.Visibility = Visibility.Visible;
-
-
             }
             else
             {
