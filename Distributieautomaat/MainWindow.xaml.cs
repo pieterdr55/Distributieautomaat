@@ -108,7 +108,6 @@ namespace Distributieautomaat
             lblinformatie3.Content = "";
             lblOverzicht.Content = "";
 
-            
 
             foreach (double keuze in bedrag)
             {

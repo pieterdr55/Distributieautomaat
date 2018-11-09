@@ -17,8 +17,8 @@
         <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="141" Margin="456,111,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="lstInworp_SelectionChanged"/>
         <Button x:Name="btnNieuweklant" Content="Nieuwe klant" HorizontalAlignment="Left" Margin="456,266,0,0" VerticalAlignment="Top" Width="131" Height="60"/>
         <Button x:Name="btnSamenvatting" Content="Samenvatting" HorizontalAlignment="Left" Margin="456,341,0,0" VerticalAlignment="Top" Width="131" Height="55" Click="btnSamenvatting_Click"/>
-        <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="620,153,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblSamenvatting" Content="Label" HorizontalAlignment="Left" Margin="620,184,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,1.962" Width="152" Height="142"/>
+        <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="615,183,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblSamenvatting" Content="Label" HorizontalAlignment="Left" Margin="615,214,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,1.962" Width="152" Height="142"/>
         <Label x:Name="lblOverzicht" Content="Label" HorizontalAlignment="Left" Margin="241,266,0,0" VerticalAlignment="Top" Height="130" Width="187"/>
 
     </Grid>
