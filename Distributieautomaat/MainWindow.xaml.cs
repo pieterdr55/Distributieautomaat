@@ -23,6 +23,7 @@ namespace Distributieautomaat
         enum Producten { Chocolade=150, wafel=200, chips=250, pannenkoek=350 };
         double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2};
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
+        int[] hoeveeltotaal = new int[] { 0, 0, 0, 0, 0 };
         char eurosymbool = '€';
         double ingeworpen = 0;
         double prijs = 0;
@@ -124,7 +125,6 @@ namespace Distributieautomaat
                 eurosymbool + " " + ingeworpen;
 
             
-
             if (ingeworpen == prijs)
             {
                 lblinformatie3.Content = "Geniet van je " + artikel;
@@ -134,6 +134,7 @@ namespace Distributieautomaat
                 lstKeuze.IsEnabled = false;
                 lstInworp.IsEnabled = false;
                 btnSamenvatting.Visibility = Visibility.Visible;
+                Voegtoeaantotaal();
             }
 
             else if (ingeworpen > prijs)
@@ -149,6 +150,7 @@ namespace Distributieautomaat
                 lstInworp.IsEnabled = false;
                 btnSamenvatting.Visibility = Visibility.Visible;
                 lblOverzicht.Visibility = Visibility.Visible;
+                Voegtoeaantotaal();
             }
             else
             {
@@ -156,6 +158,37 @@ namespace Distributieautomaat
                 lblinformatie3.Content = eurosymbool +" "+ ingeworpen;
                 lblWisselgeld.Visibility = Visibility.Visible;
                 lblinformatie3.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnSamenvatting_Click(object sender, RoutedEventArgs e)
+        {
+            Samenvatting();
+        }
+
+        public void Samenvatting()
+        {
+            int teller = 0;
+
+            lblSamenvatting.Content = "";
+
+            foreach (int aantal in hoeveeltotaal)
+            {
+                lblSamenvatting.Content += hoeveeltotaal[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
+                teller = teller + 1;
+            }
+            lblInformatie4.Visibility = Visibility.Visible;
+            lblSamenvatting.Visibility = Visibility.Visible;
+        }
+
+        public void Voegtoeaantotaal()
+        {
+            int teller = 0;
+
+            foreach (int aantal in hoeveel)
+            {
+                hoeveeltotaal[teller] = hoeveel[teller];
+                teller = teller + 1;
             }
         }
     }
