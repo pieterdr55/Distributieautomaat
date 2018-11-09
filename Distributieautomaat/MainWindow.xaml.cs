@@ -28,6 +28,7 @@ namespace Distributieautomaat
         double prijs = 0;
         double wisselgeld = 0;
         string artikel = "";
+        double omzet = 0;
         public MainWindow()
         {
             InitializeComponent();
@@ -66,6 +67,7 @@ namespace Distributieautomaat
             lblinformatie3.Visibility = Visibility.Hidden;
             lblKeuze.Visibility = Visibility.Hidden;
             lblWisselgeld.Visibility = Visibility.Hidden;
+            lblOverzicht.Visibility = Visibility.Hidden;
         }
 
 
@@ -103,9 +105,9 @@ namespace Distributieautomaat
             double gekozenbedrag = Convert.ToDouble(lstInworp.SelectedValue);
             int teller = 0;
             lblinformatie3.Content = "";
+            lblOverzicht.Content = "";
 
-            lblWisselgeld.Visibility = Visibility.Visible;
-            lblinformatie3.Visibility = Visibility.Visible;
+            
 
             foreach (double keuze in bedrag)
             {
@@ -113,7 +115,7 @@ namespace Distributieautomaat
                 {
                     hoeveel[teller] = hoeveel[teller] + 1;
                 }
-                lblinformatie3.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
+                lblOverzicht.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
             }
             
@@ -121,12 +123,41 @@ namespace Distributieautomaat
             lblWisselgeld.Content = "jouw inworp" + Environment.NewLine +
                 eurosymbool + " " + ingeworpen;
 
-            if (ingeworpen > prijs)
+            
+
+            if (ingeworpen == prijs)
+            {
+                lblinformatie3.Content = "Geniet van je " + artikel;
+                lblinformatie3.Visibility = Visibility.Visible;
+                omzet = omzet + prijs;
+                btnNieuweklant.Content = "Nieuwe Klant";
+                lstKeuze.IsEnabled = false;
+                lstInworp.IsEnabled = false;
+                btnSamenvatting.Visibility = Visibility.Visible;
+            }
+
+            else if (ingeworpen > prijs)
             {
                 wisselgeld = ingeworpen - prijs;
                 lblWisselgeld.Content = "jouw wisselgeld bedraagt " + eurosymbool + wisselgeld;
+                lblWisselgeld.Visibility = Visibility.Visible;
                 lblinformatie3.Content = "Geniet van je " + artikel;
-                
+                lblinformatie3.Visibility = Visibility.Visible;
+                omzet = omzet + prijs;
+                btnNieuweklant.Content = "Nieuwe Klant";
+                lstKeuze.IsEnabled = false;
+                lstInworp.IsEnabled = false;
+                btnSamenvatting.Visibility = Visibility.Visible;
+                lblOverzicht.Visibility = Visibility.Visible;
+
+
+            }
+            else
+            {
+                lblWisselgeld.Content = "jouw inworp";
+                lblinformatie3.Content = eurosymbool +" "+ ingeworpen;
+                lblWisselgeld.Visibility = Visibility.Visible;
+                lblinformatie3.Visibility = Visibility.Visible;
             }
         }
     }

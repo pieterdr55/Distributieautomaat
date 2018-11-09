@@ -19,6 +19,7 @@
         <Button x:Name="btnSamenvatting" Content="Samenvatting" HorizontalAlignment="Left" Margin="456,341,0,0" VerticalAlignment="Top" Width="131" Height="55"/>
         <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="601,76,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSamenvatting" Content="Label" HorizontalAlignment="Left" Margin="601,123,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOverzicht" Content="Label" HorizontalAlignment="Left" Margin="241,266,0,0" VerticalAlignment="Top" Height="130" Width="187"/>
 
     </Grid>
 </Window>
