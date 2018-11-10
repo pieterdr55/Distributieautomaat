@@ -98,7 +98,6 @@ namespace Distributieautomaat
         private void lstInworp_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             KiesBedrag();
-            lstInworp.SelectedIndex = -1;
         }
 
         public void KiesBedrag()
@@ -185,7 +184,7 @@ namespace Distributieautomaat
 
             foreach (int aantal in hoeveel)
             {
-                hoeveeltotaal[teller] += hoeveel[teller];
+                hoeveeltotaal[teller] = hoeveeltotaal[teller] + hoeveel[teller];
                 teller = teller + 1;
             }
         }
