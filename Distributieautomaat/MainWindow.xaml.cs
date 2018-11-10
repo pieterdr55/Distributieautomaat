@@ -185,9 +185,38 @@ namespace Distributieautomaat
 
             foreach (int aantal in hoeveel)
             {
-                hoeveeltotaal[teller] = hoeveel[teller];
+                hoeveeltotaal[teller] += hoeveel[teller];
                 teller = teller + 1;
             }
         }
+
+        private void btnNieuweklant_Click(object sender, RoutedEventArgs e)
+        {
+            Annuleer();
+        }
+
+        public void Annuleer()
+        {
+            int teller = 0;
+            foreach (int aantal in hoeveel)
+            {
+                hoeveel[teller] = 0;
+                teller = teller + 1;
+            }
+            ingeworpen = 0;
+            wisselgeld = 0;
+            lstKeuze.IsEnabled = true;
+            lstInworp.Visibility = Visibility.Hidden;
+            lstInworp.IsEnabled = true;
+            lblKeuze.Visibility = Visibility.Hidden;
+            lblWisselgeld.Visibility = Visibility.Hidden;
+            lblinformatie3.Visibility = Visibility.Hidden;
+            lblOverzicht.Visibility = Visibility.Hidden;
+            lblInworp.Visibility = Visibility.Hidden;
+            btnSamenvatting.Visibility = Visibility.Hidden;
+            lblInformatie4.Visibility = Visibility.Hidden;
+            lblSamenvatting.Visibility = Visibility.Hidden;
+        }
+
     }
 }
