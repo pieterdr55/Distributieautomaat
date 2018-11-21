@@ -23,7 +23,7 @@ namespace Distributieautomaat
         enum Producten { Chocolade=150, wafel=200, chips=250, pannenkoek=350 };
         double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2};
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
-        int[] hoeveeltotaal = new int[] { 0, 0, 0, 0, 0 };
+        int [] teruggave = new int[] { 0, 0, 0, 0, 0 };
         char eurosymbool = '€';
         double ingeworpen = 0;
         double prijs = 0;
@@ -104,6 +104,8 @@ namespace Distributieautomaat
         {
             double gekozenbedrag = Convert.ToDouble(lstInworp.SelectedValue);
             int teller = 0;
+            int teller2 = 0;
+            int teller3 = 0;
             lblinformatie3.Content = "";
             lblOverzicht.Content = "";
 
@@ -113,13 +115,14 @@ namespace Distributieautomaat
                 {
                     hoeveel[teller] = hoeveel[teller] + 1;
                 }
-                lblOverzicht.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
             }
-            
+        
             ingeworpen = ingeworpen + gekozenbedrag;
             lblWisselgeld.Content = "jouw inworp" + Environment.NewLine +
                 eurosymbool + " " + ingeworpen;
+
+            ingeworpen = Math.Round(ingeworpen, 2);
 
             if (ingeworpen == prijs)
             {
@@ -130,7 +133,7 @@ namespace Distributieautomaat
                 lstKeuze.IsEnabled = false;
                 lstInworp.IsEnabled = false;
                 btnSamenvatting.Visibility = Visibility.Visible;
-                Voegtoeaantotaal();
+                
             }
 
             else if (ingeworpen > prijs)
@@ -146,7 +149,52 @@ namespace Distributieautomaat
                 lstInworp.IsEnabled = false;
                 btnSamenvatting.Visibility = Visibility.Visible;
                 lblOverzicht.Visibility = Visibility.Visible;
-                Voegtoeaantotaal();
+                
+
+                
+                while (wisselgeld>=2)
+                {
+                    teruggave[4] = teruggave[4] + 1;
+                    wisselgeld = wisselgeld - 2;
+                }
+
+                while (wisselgeld >= 1)
+                {
+                    teruggave[3] = teruggave[3] + 1;
+                    wisselgeld = wisselgeld - 1;
+                }
+
+                while (wisselgeld >= 0.5)
+                {
+                    teruggave[2] = teruggave[2] + 1;
+                    wisselgeld = wisselgeld - 0.5;
+                }
+
+                while (wisselgeld >= 0.2)
+                {
+                    teruggave[1] = teruggave[1] + 1;
+                    wisselgeld = wisselgeld - 0.2;
+                }
+
+                while (wisselgeld >= 0.1)
+                {
+                    teruggave[0] = teruggave[0] + 1;
+                    wisselgeld = wisselgeld - 0.1;
+                }
+
+                foreach (int keuze in bedrag)
+                {
+                    lblOverzicht.Content += teruggave[teller2] + " stukken van " + eurosymbool + bedrag[teller2] + Environment.NewLine;
+                    teller2 = teller2 + 1;
+                }
+
+                foreach (int muntstuk in teruggave)
+                {
+                    hoeveel[teller3] = hoeveel[teller3] - teruggave[teller3];
+                    teller3 = teller3 + 1;
+                }
+
+
             }
             else
             {
@@ -168,25 +216,16 @@ namespace Distributieautomaat
 
             lblSamenvatting.Content = "";
 
-            foreach (int aantal in hoeveeltotaal)
+            foreach (int aantal in hoeveel)
             {
-                lblSamenvatting.Content += hoeveeltotaal[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
+                lblSamenvatting.Content += hoeveel[teller] + "stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
             }
             lblInformatie4.Visibility = Visibility.Visible;
             lblSamenvatting.Visibility = Visibility.Visible;
         }
 
-        public void Voegtoeaantotaal()
-        {
-            int teller = 0;
-
-            foreach (int aantal in hoeveel)
-            {
-                hoeveeltotaal[teller] = hoeveeltotaal[teller] + hoeveel[teller];
-                teller = teller + 1;
-            }
-        }
+        
 
         private void btnNieuweklant_Click(object sender, RoutedEventArgs e)
         {
@@ -196,11 +235,6 @@ namespace Distributieautomaat
         public void Annuleer()
         {
             int teller = 0;
-            foreach (int aantal in hoeveel)
-            {
-                hoeveel[teller] = 0;
-                teller = teller + 1;
-            }
             ingeworpen = 0;
             wisselgeld = 0;
             lstKeuze.IsEnabled = true;
@@ -214,7 +248,13 @@ namespace Distributieautomaat
             btnSamenvatting.Visibility = Visibility.Hidden;
             lblInformatie4.Visibility = Visibility.Hidden;
             lblSamenvatting.Visibility = Visibility.Hidden;
+            foreach(int muntstuk in teruggave)
+            {
+                teruggave[teller] = 0;
+                teller = teller + 1;
+            }
         }
 
+        
     }
 }

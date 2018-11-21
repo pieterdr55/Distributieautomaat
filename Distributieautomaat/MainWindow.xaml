@@ -15,7 +15,7 @@
         <Label x:Name="lblinformatie3" Content="Label" HorizontalAlignment="Left" Margin="241,226,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblInworp" Content="Inworp" HorizontalAlignment="Left" Margin="465,68,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="lstInworp" HorizontalAlignment="Left" Height="141" Margin="456,111,0,0" VerticalAlignment="Top" Width="131" SelectionChanged="lstInworp_SelectionChanged"/>
-        <Button x:Name="btnNieuweklant" Content="Nieuwe klant" HorizontalAlignment="Left" Margin="456,266,0,0" VerticalAlignment="Top" Width="131" Height="60" Click="btnNieuweklant_Click"/>
+        <Button x:Name="btnNieuweklant" Content="Annulatie" HorizontalAlignment="Left" Margin="456,266,0,0" VerticalAlignment="Top" Width="131" Height="60" Click="btnNieuweklant_Click"/>
         <Button x:Name="btnSamenvatting" Content="Samenvatting" HorizontalAlignment="Left" Margin="456,341,0,0" VerticalAlignment="Top" Width="131" Height="55" Click="btnSamenvatting_Click"/>
         <Label x:Name="lblInformatie4" Content="Samenvatting" HorizontalAlignment="Left" Margin="615,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblSamenvatting" Content="Label" HorizontalAlignment="Left" Margin="615,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.079,1.962" Width="152" Height="142"/>
