@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Distributieautomaat
 {
@@ -103,11 +104,13 @@ namespace Distributieautomaat
         public void KiesBedrag()
         {
             double gekozenbedrag = Convert.ToDouble(lstInworp.SelectedValue);
+            int gekozenindex = Convert.ToInt32(lstInworp.SelectedIndex);
             int teller = 0;
             int teller2 = 0;
             int teller3 = 0;
             lblinformatie3.Content = "";
             lblOverzicht.Content = "";
+            bool wisselgeldbericht = false;
 
             foreach (double keuze in bedrag)
             {
@@ -117,6 +120,9 @@ namespace Distributieautomaat
                 }
                 teller = teller + 1;
             }
+
+            Debug.WriteLine(hoeveel[gekozenindex] + " stukken van " + eurosymbool + bedrag[gekozenindex]);
+            
         
             ingeworpen = ingeworpen + gekozenbedrag;
             lblWisselgeld.Content = "jouw inworp" + Environment.NewLine +
@@ -190,8 +196,20 @@ namespace Distributieautomaat
 
                 foreach (int muntstuk in teruggave)
                 {
-                    hoeveel[teller3] = hoeveel[teller3] - teruggave[teller3];
-                    teller3 = teller3 + 1;
+                    if(hoeveel[teller3]>=teruggave[teller3])
+                    {
+                        hoeveel[teller3] = hoeveel[teller3] - teruggave[teller3];
+                        teller3 = teller3 + 1;
+                    }
+                    else if (wisselgeldbericht == false)
+                    {
+                        MessageBox.Show("De automaat kan geen wisselgeld teruggeven, spijtig");
+                        wisselgeldbericht = true;
+                    }
+                    else
+                    {
+
+                    }
                 }
 
 
@@ -218,7 +236,7 @@ namespace Distributieautomaat
 
             foreach (int aantal in hoeveel)
             {
-                lblSamenvatting.Content += hoeveel[teller] + "stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
+                lblSamenvatting.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
             }
             lblInformatie4.Visibility = Visibility.Visible;
