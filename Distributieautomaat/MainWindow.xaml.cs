@@ -21,10 +21,11 @@ namespace Distributieautomaat
     /// </summary>
     public partial class MainWindow : Window
     {
-        enum Producten { Chocolade=150, wafel=200, chips=250, pannenkoek=350 };
-        double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2};
+        enum Producten { Chocolade = 150, wafel = 200, chips = 250, pannenkoek = 350 };
+        double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2 };
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
-        int [] teruggave = new int[] { 0, 0, 0, 0, 0 };
+        int[] teruggave = new int[] { 0, 0, 0, 0, 0 };
+        int[] artikelen= new int[] { 0,0,0,0};
         char eurosymbool = '€';
         double ingeworpen = 0;
         double prijs = 0;
@@ -85,7 +86,16 @@ namespace Distributieautomaat
             double indexdl = Convert.ToDouble(index);
             prijs = indexdl / 100;
             lblKeuze.Content = artikel + " "+ eurosymbool + prijs;
-
+            int keuzeindex = lstKeuze.SelectedIndex;
+            int teller = 0;
+            foreach (int artikel in artikelen)
+            {
+                if (teller == keuzeindex)
+                {
+                    artikelen[teller] = artikelen[teller] + 1;
+                }
+                teller = teller + 1;
+            }
 
             lblInworp.Visibility = Visibility.Visible;
             lstInworp.Visibility = Visibility.Visible;
@@ -231,6 +241,7 @@ namespace Distributieautomaat
         public void Samenvatting()
         {
             int teller = 0;
+            int teller2 = 0;
 
             lblSamenvatting.Content = "";
 
@@ -238,6 +249,12 @@ namespace Distributieautomaat
             {
                 lblSamenvatting.Content += hoeveel[teller] + " stukken van " + eurosymbool + " " + bedrag[teller] + Environment.NewLine;
                 teller = teller + 1;
+            }
+
+            foreach (string product in Enum.GetNames(typeof(Producten)))
+            {
+                lblSamenvatting.Content += product + ":" + artikelen[teller2] + Environment.NewLine;
+                teller2 = teller2 + 1;
             }
             lblInformatie4.Visibility = Visibility.Visible;
             lblSamenvatting.Visibility = Visibility.Visible;
