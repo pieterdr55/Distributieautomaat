@@ -21,7 +21,7 @@ namespace Distributieautomaat
     /// </summary>
     public partial class MainWindow : Window
     {
-        enum Producten { Chocolade = 150, wafel = 200, chips = 250, pannenkoek = 350 };
+        enum Producten { Chocolade = 150, Water = 200, Wafel = 250, Verassing = 350 };
         double[] bedrag = new double[] { 0.1, 0.2, 0.5, 1, 2 };
         int[] hoeveel = new int[] { 0, 0, 0, 0, 0 };
         int[] teruggave = new int[] { 0, 0, 0, 0, 0 };
